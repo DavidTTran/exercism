@@ -1,8 +1,10 @@
-=begin
-Write your code for the 'Armstrong Numbers' exercise in this file. Make the tests in
-`armstrong_numbers_test.rb` pass.
+class ArmstrongNumbers
 
-To get started with TDD, see the `README.md` file in your
-`ruby/armstrong-numbers` directory.
-=end
-
+  def self.include?(integer)
+    numbers = integer.digits
+    sum = numbers.sum do |number|
+      number ** numbers.length
+    end
+    sum == integer ? true : false
+  end
+end
